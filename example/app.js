@@ -111,7 +111,7 @@ function getAccessToken() {
       const domain = site.attributes.domain || site.attributes.internal_domain;
       const url = `https://${domain}/`;
       const accessUrl = `${url}enter?access_token=${site.attributes.access_token}`;
-      `<a href="${site.attributes.url}">${site.attributes.name}</a>`
+      return `<a href="${site.attributes.url}">${site.attributes.name}</a>`;
     }).join(','));
   }).catch((error) => {
     showOutput(`Error fetching sites: ${error}`);
