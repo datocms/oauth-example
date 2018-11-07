@@ -39,20 +39,20 @@ function start() {
   */
   const redirectURI = document.location.href;
 
-  const scope = 'read_sites';
+  const scopes = ['read_sites'];
 
   authLink.href = 'https://oauth.datocms.com/oauth/authorize?' +
       'client_id=' + clientId +
       '&response_type=token' +
       '&redirect_uri=' + redirectURI +
-      '&state=' + state;
-      '&scopes=' + scope;
+      '&state=' + state +
+      '&scopes=' + scopes.join(',');
 
-  const li = document.createElement('li');
-
-  li.appendChild(document.createTextNode(scope));
-
-  permissionList.appendChild(li);
+  scopes.forEach((scope) => {
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(scope));
+    permissionList.appendChild(li);
+  });
 }
 
 /*
