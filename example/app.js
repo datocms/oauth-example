@@ -104,9 +104,14 @@ function getAccessToken() {
       'Authorization': 'Bearer ' + response.access_token
     }
   }).then((response) => {
-    response.json().then((json) => {
-      showOutput('Your sites: ' + json.map((site) => `<a href="${site.url}">${site.url}</a>`).join(','));
-    });
+    return response.json();
+  }).then((json) => {
+    showOutput('Your sites: ' + json.data.map((site) => {
+      const domain = site.attributes.domain || site.attributes.internal_domain;
+      const url = `https://${domain}/`;
+      const accessUrl = `${url}enter?access_token=${site.attributes.access_token}`;
+      `<a href="${site.attributes.url}">${site.attributes.name}</a>`
+    }).join(','));
   }).catch((error) => {
     showOutput(`Error fetching sites: ${error}`);
   });
