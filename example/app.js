@@ -101,7 +101,8 @@ function getAccessToken() {
   // The token is used to fetch the user's list of sites from the account API
   fetch('https://account-api.datocms.com/sites', {
     headers: {
-      'Authorization': 'Bearer ' + response.access_token
+      'Authorization': 'Bearer ' + response.access_token,
+      'Accept': 'application/json',
     }
   }).then((response) => {
     return response.json();
