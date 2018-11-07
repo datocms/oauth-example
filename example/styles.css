@@ -8,26 +8,104 @@ body {
   padding: 20px;
 }
 
-.step {
-  display: none;
-  border: 1px solid #444;
-  padding: 20px 50px;
+.oauth2 {
+  background-color: #57344F;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-.step.visible {
+
+.oauth2__container {
+  padding: 50px;
+}
+
+.oauth2__logo {
+  height: 50px;
+}
+
+.oauth2__title {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  padding-top: 24px;
+  padding-bottom: 36px;
+}
+
+.oauth2__box {
+  background: white;
+  padding: 50px;
+  text-align: left;
+  color: #222;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.oauth2__link {
+  color: #444;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.oauth2__description {
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+.oauth2__list {
+  padding: 0 0 20px 40px;
+  margin: 0;
+}
+
+.oauth2__button {
+  border: none;
   display: block;
+  padding: 15px 20px;
+  background-color: #ff5e49;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-input {
-  border: 1px solid #aaa;
-  padding: 6px 12px;
-  font-size: 16px;
+.oauth2__button--deny {
+  cursor: pointer;
+  border: none;
+  display: block;
+  padding: 15px 20px;
+  background-color: #cd5c5c;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
 }
 
-button {
-  padding: 6px 18px;
-  font-size: 16px;
-  border: 1px solid #aaa;
-  border-radius: 7px;
-  background: #efefef;
-  margin-left: 6px;
+.oauth2__input {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  margin-top: 5px;
+  border: 1px solid #f0f0f0;
+  display: block;
+  width: 92%;
+}
+
+.oauth2__label {
+  color: #ff5e49;
+  font-weight: bold;
+  margin: 0;
 }

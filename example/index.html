@@ -1,26 +1,32 @@
 <!doctype html>
 <html>
 <head>
-  <title>Minimal example of asking for access tokens via DatoCms's OAuth2 API</title>
+  <title>Asking for access tokens via DatoCms's OAuth2 API</title>
   <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
-  <h1>This is a simple example of using Netlify as an OAuth2 provider</h1>
+  <div class="oauth2">
+    <div class="oauth2__container">
+      <h1 class="oauth2__title">Asking for access tokens via DatoCms's OAuth2 API</h1>
+    </div>
+    <div class="oauth2__box">
+      <div id="step-1">
+        <p class="oauth2__label">First step</p>
+        <h2>Authorize with DatoCms</h2>
+        <p>You will get permission to</p>
+        <ul id="permission-list">
+        </ul>
+        <a id="auth-url" class="oauth2__button" href="#">Authorize</a>
+      </div>
 
-  <div class="step-2" class="step">
-    <h2>Authorize with DatoCms</h2>
+      <div id="step-2">
+        <h2>Make API calls</h2>
 
-    <p>
-      <a class="oauth2__button" href="#">Authorize</a>
-    </p>
+        <p id="output">Loading sites for this user...</p>
+      </div>
+
+      <script src="/app.js"></script>
+    </div>
   </div>
-
-  <div class="step-3" class="step">
-    <h2>Step 3: Make API calls</h2>
-
-    <p class="output">Loading sites for this user...</p>
-  </div>
-
-  <script src="/app.js"></script>
 </body>
 </html>
