@@ -46,7 +46,7 @@ function start() {
       '&response_type=token' +
       '&redirect_uri=' + redirectURI +
       '&state=' + state;
-      '&scopes=';
+      '&scopes=' + scope;
 
   const li = document.createElement('li');
 
