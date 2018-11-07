@@ -3,12 +3,10 @@
 * to get one for your app contact: support@datocms.com.
 */
 
-const clientId = '006358252cfffeb731bff8e55d93e028628422ca5f54aee54bb29ac55ed3c4f8';
+const clientId       = 'eb321c597aec32598153b0c3cdb0dbdc438b742d1a77f59fc7eeb7a3900d1029';
 const hash           = document.location.hash;
 const authLink       = document.getElementById('auth-url');
 const permissionList = document.getElementById('permission-list');
-
-
 
 /*
  * The Oauth2 implicit grant flow works by sending the user to DatoCms where she'll
@@ -27,6 +25,7 @@ if (hash) {
 
 function start() {
   document.getElementById('step-2').style.display = 'none';
+
   /*
   * We generate a random state that we'll validate when DatoCms redirects back to
   * our app. It is used to guard against CSRF attacks as described in:
@@ -39,8 +38,10 @@ function start() {
   * DatoCMS will redirect to the current page
   */
   const redirectURI = document.location.href;
+
   const scope = 'read_sites';
-  authLink.href = 'http://oauth2.lvh.me:3001/oauth/authorize?' +
+
+  authLink.href = 'https://oauth.datocms.com/oauth/authorize?' +
       'client_id=' + clientId +
       '&response_type=token' +
       '&redirect_uri=' + redirectURI +
@@ -48,7 +49,9 @@ function start() {
       '&scopes=';
 
   const li = document.createElement('li');
+
   li.appendChild(document.createTextNode(scope));
+
   permissionList.appendChild(li);
 }
 
